@@ -28,11 +28,16 @@ class BaiTapBurger2 extends Component {
   renderMenu = () => {
     let { menu } = this.props;
     return Object.entries(menu).map(([propsMenu, price], index) => {
-      return <tr key={index}>
+      return (
+        <tr key={index}>
           <td>{propsMenu}</td>
-          <td></td>
+          <td>
+            <button className="btn btn-primary">+</button>
+            <button className="btn btn-primary">-</button>
+          </td>
           <td>{price}</td>
-      </tr>;
+        </tr>
+      );
     });
   };
 
@@ -49,6 +54,7 @@ class BaiTapBurger2 extends Component {
           </div>
           <div className="col-4">
             <h3>Menu</h3>
+
             <table className="table">
               <thead>
                 <tr>
@@ -57,6 +63,9 @@ class BaiTapBurger2 extends Component {
                   <th>Don Gia</th>
                 </tr>
               </thead>
+              <tbody>
+                  {this.renderMenu()}
+              </tbody>
             </table>
           </div>
         </div>
