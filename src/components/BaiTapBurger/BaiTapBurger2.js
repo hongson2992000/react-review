@@ -26,16 +26,18 @@ class BaiTapBurger2 extends Component {
   };
 
   renderMenu = () => {
-    let { menu } = this.props;
+    let { menu, burger } = this.props;
     return Object.entries(menu).map(([propsMenu, price], index) => {
       return (
         <tr key={index}>
           <td>{propsMenu}</td>
           <td>
-            <button className="btn btn-primary">+</button>
-            <button className="btn btn-primary">-</button>
+            <button className="btn btn-primary" onClick={()=>this.props.addBreadMid(propsMenu,1)}>+</button>
+            {burger[propsMenu]}
+            <button className="btn btn-primary" onClick={()=>this.props.addBreadMid(propsMenu,-1)}>-</button>
           </td>
           <td>{price}</td>
+          <td>{burger[propsMenu] * price}</td>
         </tr>
       );
     });
@@ -52,7 +54,7 @@ class BaiTapBurger2 extends Component {
             {this.renderBurger()}
             <div className="breadBottom"></div>
           </div>
-          <div className="col-4">
+          <div className="col-5">
             <h3>Menu</h3>
 
             <table className="table">
@@ -61,11 +63,17 @@ class BaiTapBurger2 extends Component {
                   <th>Mon </th>
                   <th>So Luong</th>
                   <th>Don Gia</th>
+                  <th>Thanh Tien</th>
                 </tr>
               </thead>
-              <tbody>
-                  {this.renderMenu()}
-              </tbody>
+              <tbody>{this.renderMenu()}</tbody>
+              <tfoot>
+                <tr>
+                  <td colSpan="2"></td>
+                  <td>Total</td>
+                  <td>{this.props.total}</td>
+                </tr>
+              </tfoot>
             </table>
           </div>
         </div>
@@ -80,4 +88,17 @@ const mapStateToProps = (state) => {
     total: state.BurgerReducer.total,
   };
 };
-export default connect(mapStateToProps, null)(BaiTapBurger2);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addBreadMid: (propBurger, amount) => {
+      const action = {
+        type: "ADD_BREAD",
+        propBurger,
+        amount,
+      };
+      dispatch(action);
+    },
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(BaiTapBurger2);
