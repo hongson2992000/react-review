@@ -1,0 +1,26 @@
+[{
+        "maSP": 1,
+        "tenSP": "VinSmart Live",
+        "giaBan": 5700000,
+        "hinhAnh": "./img/sp_blackberry.png",
+        "soLuong": 1
+    },
+
+    {
+        "maSP": 2,
+        "tenSP": "Meizu 16Xs",
+        "manHinh": "AMOLED, FHD+ 2232 x 1080 pixels",
+
+        "giaBan": 7600000,
+        "hinhAnh": "./img/sp_note7.png",
+        "soLuong": 1
+    },
+
+    {
+        "maSP": 3,
+        "tenSP": "Iphone XS Max",
+        "soLuong": 1,
+        "giaBan": 27000000,
+        "hinhAnh": "./img/sp_iphoneX.png"
+    }
+]
