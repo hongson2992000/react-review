@@ -11,8 +11,8 @@ import "./App.css";
 // import BaiTapChia from "./components/BaiTapComponent/BaiTapChia";
 // import Event from './components/Databinding/Event';
 // import BaiTapCar from "./components/CauTrucDieuKien_Render/BaiTapCar";
-import BaiTapBurger from "./components/BaiTapBurger/BaiTapBurger2";
-// import BaiTapForm from "./components/BaiTapForm/BaiTapForm";
+// import BaiTapBurger from "./components/BaiTapBurger/BaiTapBurger2";
+import BaiTapForm2 from "./components/BaiTapForm2/BaiTapForm2";
 // import BaiTapState2 from "./components/BaiTapState2/BaiTapState2"
 // import BaiTapComponent from "./components/BaiTapComponent/BaiTapChia"
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -31,8 +31,8 @@ export default function App() {
       {/* <DemoProps title={"CyberSoft"} /> */}
       {/* <BaiTapGioHang/> */}
       {/* <BaiTapRedux2 /> */}
-      <BaiTapBurger />
-      {/* <BaiTapForm /> */}
+      {/* <BaiTapBurger /> */}
+      <BaiTapForm2 />
       {/* <BaiTapState2/> */}
       {/* <BrowserRouter>
         <Header />

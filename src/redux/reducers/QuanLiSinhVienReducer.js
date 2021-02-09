@@ -3,7 +3,7 @@ const stateDefault = {
     {
       maSV: 1,
       hoTen: "dao hong son",
-      soDienThoai: "0344656937",
+      soDienThoai: "0344656907",
       email: "hongson@gmail.com",
     },
   ],
